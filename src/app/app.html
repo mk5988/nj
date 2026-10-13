@@ -1,0 +1,17 @@
+<nav>
+  <a routerLink="/" routerLinkActive="ativo" [routerLinkActiveOptions]="{ exact: true }">
+    Home
+  </a>
+
+  <a routerLink="/pessoa" routerLinkActive="ativo">
+    Pessoa
+  </a>
+
+  <a routerLink="/eventos/novo" routerLinkActive="ativo">
+    Novo evento
+  </a>
+</nav>
+
+<hr>
+
+<router-outlet></router-outlet>

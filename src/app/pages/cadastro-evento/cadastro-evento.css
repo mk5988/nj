@@ -1,0 +1,82 @@
+.cadastro-evento {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #066deb;
+  border-radius: 0.75rem;
+  background: #ebdb07;
+}
+
+.cadastro-evento h2,
+.cadastro-evento h3,
+.cadastro-evento h4 {
+  margin-top: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #11ec09;
+  border-radius: 0.5rem;
+}
+
+input.invalido,
+select.invalido {
+  border-color: #d32f2f;
+  background-color: #17f803;
+}
+
+.erro {
+  color: #d32f2f;
+  font-size: 0.85rem;
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: #1d4ed8;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.lista-eventos {
+  margin-top: 2rem;
+}
+
+.evento-card {
+  border: 1px solid #1be908;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #05e610;
+}
+
+.evento-card p {
+  margin: 0.35rem 0;
+}

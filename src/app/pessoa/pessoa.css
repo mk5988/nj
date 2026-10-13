@@ -1,0 +1,30 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px 0;
+  max-width: 500px;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin: 6px 0;
+}
+
+.card.invalido {
+  border: 2px solid red;
+}
+
+.aviso-id {
+  border: 2px solid red;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.aviso-id p {
+  margin: 0;
+  font-weight: bold;
+}

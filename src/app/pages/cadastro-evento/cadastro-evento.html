@@ -1,0 +1,106 @@
+<section class="cadastro-evento">
+  <h2>Novo evento</h2>
+
+  <form (ngSubmit)="salvar()">
+    <div class="campo">
+      <label for="titulo">Título do evento</label>
+      <input
+        id="titulo"
+        name="titulo"
+        type="text"
+        [(ngModel)]="evento.titulo"
+        (blur)="marcarComoTocado('titulo')"
+        [class.invalido]="mostrarErro('titulo')"
+      />
+      @if (mostrarErro('titulo')) {
+        <small class="erro">{{ obterMensagemErro('titulo') }}</small>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="data">Data</label>
+      <input
+        id="data"
+        name="data"
+        type="date"
+        [(ngModel)]="evento.data"
+        (blur)="marcarComoTocado('data')"
+        [class.invalido]="mostrarErro('data')"
+      />
+      @if (mostrarErro('data')) {
+        <small class="erro">{{ obterMensagemErro('data') }}</small>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="local">Local</label>
+      <select
+        id="local"
+        name="local"
+        [(ngModel)]="evento.local"
+        (blur)="marcarComoTocado('local')"
+        [class.invalido]="mostrarErro('local')"
+      >
+        <option value="">Selecione um local</option>
+        <option value="Auditório">Auditório</option>
+        <option value="Laboratório 1">Laboratório 1</option>
+        <option value="Laboratório 2">Laboratório 2</option>
+        <option value="Sala 101">Sala 101</option>
+      </select>
+      @if (mostrarErro('local')) {
+        <small class="erro">{{ obterMensagemErro('local') }}</small>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="emailResponsavel">E-mail do responsável</label>
+      <input
+        id="emailResponsavel"
+        name="emailResponsavel"
+        type="email"
+        [(ngModel)]="evento.emailResponsavel"
+        (blur)="marcarComoTocado('emailResponsavel')"
+        [class.invalido]="mostrarErro('emailResponsavel')"
+      />
+      @if (mostrarErro('emailResponsavel')) {
+        <small class="erro">{{ obterMensagemErro('emailResponsavel') }}</small>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="vagas">Vagas</label>
+      <input
+        id="vagas"
+        name="vagas"
+        type="number"
+        min="1"
+        max="200"
+        step="1"
+        [(ngModel)]="evento.vagas"
+        (blur)="marcarComoTocado('vagas')"
+        [class.invalido]="mostrarErro('vagas')"
+      />
+      @if (mostrarErro('vagas')) {
+        <small class="erro">{{ obterMensagemErro('vagas') }}</small>
+      }
+    </div>
+
+    <button type="submit" [disabled]="formularioInvalido()">Salvar</button>
+  </form>
+
+  <section class="lista-eventos">
+    <h3>Eventos cadastrados</h3>
+
+    @for (evento of eventos; track evento.id) {
+      <article class="evento-card">
+        <h4>{{ evento.titulo }}</h4>
+        <p><strong>Data:</strong> {{ evento.data }}</p>
+        <p><strong>Local:</strong> {{ evento.local }}</p>
+        <p><strong>E-mail do responsável:</strong> {{ evento.emailResponsavel }}</p>
+        <p><strong>Vagas:</strong> {{ evento.vagas }}</p>
+      </article>
+    } @empty {
+      <p>Nenhum evento cadastrado.</p>
+    }
+  </section>
+</section>

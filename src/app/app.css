@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: #1f2937;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a.ativo {
+  background-color: #fdfdfd;
+  color: #1447b8;
+  font-weight: 600;
+}
